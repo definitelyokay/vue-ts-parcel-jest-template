@@ -1,0 +1,58 @@
+{
+	"name": "@definitelyokay/ts-parcel-jest-template",
+	"version": "1.0.0",
+	"description": "A simple project",
+	"main": "./src/index.ts",
+	"scripts": {
+		"preinstall": "npx npm-force-resolutions",
+		"start": "npx parcel src/index.html",
+		"build": "npx parcel build src/index.html",
+		"unused": "npx ts-prune",
+		"lint": "eslint './src/**/*.{ts,tsx}'",
+		"lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
+		"test:coverage-report": "jest --passWithNoTests --config=jest.config.js --collectCoverage --verbose",
+		"test:badges": "npx jest-coverage-badges --output './badges'",
+		"coverage": "npm run test:coverage-report; npm run test:badges",
+		"test": "jest --passWithNoTests --config=jest.config.js --verbose",
+		"cloc": "sh ./cloc.sh",
+		"tslint-check": "tslint-config-prettier-check ./tslint.json",
+		"history": "git log --pretty=format:\"%h%x09%an%x09%ad%x09%s\""
+	},
+	"author": "Jo Essin",
+	"dependencies": {
+		"reflect-metadata": "^0.1.13",
+		"vue": "^2.6.12",
+		"vue-class-component": "^7.2.5",
+		"vue-hot-reload-api": "^2.3.4",
+		"vue-property-decorator": "^9.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/definitelyokay/ts-parcel-jest-template"
+	},
+	"resolutions": {
+		"minimist": "1.2.3"
+	},
+	"devDependencies": {
+		"@types/jest": "^26.0.4",
+		"@types/node": "^14.0.23",
+		"@typescript-eslint/eslint-plugin": "^4.1.1",
+		"@typescript-eslint/parser": "^4.1.1",
+		"@vue/component-compiler-utils": "^3.2.0",
+		"eslint": "^7.4.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.22.0",
+		"eslint-plugin-jsdoc": "^30.5.1",
+		"eslint-plugin-prettier": "^3.1.4",
+		"eslint-plugin-unicorn": "^21.0.0",
+		"jest": "^26.1.0",
+		"jest-coverage-badges": "^1.1.2",
+		"less": "^3.12.2",
+		"npm-force-resolutions": "0.0.3",
+		"prettier": "^2.0.5",
+		"ts-jest": "^26.1.2",
+		"ts-prune": "^0.8.3",
+		"typescript": "^4.0.2",
+		"vue-template-compiler": "^2.6.12"
+	}
+}
